@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman Data Pribadi - Tema Gelap Cyberpunk dengan Hujan</title>
+  <title>PERSONAL ID</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <style>
     /* Dark theme CSS with Cyberpunk elements and rain animation */
@@ -129,12 +129,16 @@
       margin: 20px auto;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
       transition: transform 0.6s, box-shadow 0.6s;
-      animation: float 2s ease-in-out infinite alternate;
+      animation: float 3s ease-in-out infinite alternate; /* Animasi float untuk gambar profil */
     }
 
     @keyframes float {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-10px); }
+      0% { transform: translatey(0); }
+      100% { transform: translatey(-10px); }
+    }
+
+    .profile-picture:hover {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); /* Efek bercahaya saat hover */
     }
 
     .button {
@@ -146,7 +150,8 @@
       cursor: pointer;
       font-size: 1em;
       transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      display: block;
+      display: flex; /* Ubah menjadi flex */
+      align-items: center; /* Pusatkan logo dan teks secara vertikal */
       margin: 20px auto;
       text-align: center;
     }
@@ -178,55 +183,93 @@
       margin: 20px 0;
       list-style: none;
     }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(15, 15, 15, 0.9);
+      color: #0affef;
+      border-radius: 0 0 15px 15px;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.7);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .whatsapp-icon {
+      margin-left: 10px; /* Jarak antara ikon dan teks */
+      width: 20px; /* Ukuran ikon */
+      height: 20px; /* Ukuran ikon */
+    }
   </style>
 </head>
 <body>
   <!-- Rain Effect Script -->
   <script>
-    function createRaindrop() {
-      const raindrop = document.createElement('div');
-      raindrop.className = 'raindrop';
-      raindrop.style.left = Math.random() * 100 + 'vw';
-      raindrop.style.animationDuration = Math.random() * 0.5 + 0.5 + 's'; // Speed of each raindrop
-      document.body.appendChild(raindrop);
+    const maxRaindrops = 20; // Jumlah maksimum raindrop yang aktif
+    const raindrops = []; // Array untuk menyimpan raindrop yang sedang aktif
 
-      // Remove raindrop after animation
-      raindrop.addEventListener('animationend', () => {
-        raindrop.remove();
-      });
+    function createRaindrop() {
+      if (raindrops.length < maxRaindrops) { // Cek apakah jumlah raindrop sudah mencapai maksimum
+        const raindrop = document.createElement('div');
+        raindrop.className = 'raindrop';
+        raindrop.style.left = Math.random() * 100 + 'vw';
+        raindrop.style.animationDuration = Math.random() * 0.5 + 0.5 + 's'; // Kecepatan setiap raindrop
+        document.body.appendChild(raindrop);
+        raindrops.push(raindrop); // Tambahkan raindrop ke array
+
+        // Hapus raindrop setelah animasi selesai
+        raindrop.addEventListener('animationend', () => {
+          raindrop.remove();
+          raindrops.splice(raindrops.indexOf(raindrop), 1); // Hapus dari array
+        });
+      }
     }
 
-    setInterval(createRaindrop, 100); // Create a raindrop every 100ms
+    setInterval(createRaindrop, 100); // Buat raindrop setiap 100ms
   </script>
 
   <div class="container">
     <div class="header">
-      <h1>DisnakerTrans x SMKN 2 Buduran</h1>
+      <h1>DISNAKERTRANS x SMKN 2 BUDURAN</h1>
     </div>
-    <div class="section">
-      <h2>Foto Profil</h2>
-      <img src="Gambar galang skena.jpg" alt="Foto Profil" class="profile-picture">
+
+    <div class="profile-picture">
+      <img src="Gambar galang skena.jpg" alt="Profile" class="profile-picture">
     </div>
+
     <div class="section">
       <h2>Nama</h2>
-      <p>Galang Arrauf Pramudito</p>
+      <p>Galang Arrauf pramudito</p>
     </div>
+
+    <div class="section">
+      <h2>Email</h2>
+      <p>galangskywalker@gmail.com</p>
+    </div>
+
+    <!-- Tambahkan bagian alamat di sini -->
     <div class="section">
       <h2>Alamat</h2>
-      <p>Perum Bumi Cabean Asri, Candi Sidoarjo</p>
+      <p>Perum bumi cabean asri G1/3, Sidoarjo, Jawa Timur, 61271</p>
     </div>
-    <div class="section">
-      <h2>No. Telepon</h2>
-      <p>0895-3647-73207</p>
+
+    <div class="social-media-links">
+      <a href="https://instagram.com/galngg_" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://tiktok.com/@laaaangggggggg" target="_blank" title="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
     </div>
-    <div class="section">
-      <h2>Media Sosial</h2>
-      <ul class="social-media-links">
-        <li><a href="https://www.instagram.com/galngg_?igsh=bWlnenpybTdzZjNr" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://www.tiktok.com/@laaaangggggggg?_t=8qaJbvuFcqw&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a></li>
-        <li><a href="https://wa.me/+62895364773207" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-      </ul>
+    
+
+    <div class="footer">
+      <button class="button" onclick="window.open('https://wa.me/62895364773207', '_blank')">
+        <span>Hubungi Saya</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" class="whatsapp-icon">
+      </button>
     </div>
+    
   </div>
 </body>
 </html>
