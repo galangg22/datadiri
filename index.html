@@ -200,11 +200,52 @@
       width: 20px; /* Ukuran ikon */
       height: 20px; /* Ukuran ikon */
     }
+    
+  /* CSS lainnya tetap sama */
+
+  audio {
+    width: 100%;
+    margin: 20px 0;
+    background: rgba(15, 15, 15, 0.8);
+    border: 2px solid #0affef;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    outline: none;
+    padding: 10px;
+  }
+
+  audio::-webkit-media-controls-panel {
+    background: rgba(15, 15, 15, 0.9);
+    border-radius: 10px;
+  }
+
+  audio::-webkit-media-controls-play-button {
+    background: #0affef;
+    border-radius: 50%;
+  }
+
+  audio::-webkit-media-controls-volume-slider {
+    background: #0affef;
+  }
+
+  audio::-webkit-media-controls-mute-button {
+    background: #ff00ff;
+    border-radius: 50%;
+  }
+</style
   </style>
 </head>
 <body>
   <!-- Rain Effect Script -->
   <script>
+
+  window.addEventListener('load', function() {
+    const audio = document.querySelector('audio');
+    audio.play().catch(error => {
+      console.log('Autoplay diblokir oleh browser. Pengguna perlu mengklik play.');
+    });
+  });
+
     const maxRaindrops = 20; // Jumlah maksimum raindrop yang aktif
     const raindrops = []; // Array untuk menyimpan raindrop yang sedang aktif
 
@@ -226,6 +267,8 @@
     }
 
     setInterval(createRaindrop, 100); // Buat raindrop setiap 100ms
+
+
   </script>
 
   <div class="container">
@@ -262,13 +305,17 @@
       </a>
     </div>
     
-
     <div class="footer">
       <button class="button" onclick="window.open('https://wa.me/62895364773207', '_blank')">
         <span>Hubungi Saya</span>
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" class="whatsapp-icon">
       </button>
     </div>
+    <audio controls autoplay>
+      <source src="raissa anggiani - Itu Aku.flac" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
     
   </div>
 </body>
