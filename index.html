@@ -5,46 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PERSONAL ID</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Dark theme CSS with Cyberpunk elements and rain animation */
+    /* Tema Galaxy dengan Animasi Keren */
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      color: #e0e0e0;
-      background-color: #0b0f14; /* Dark background */
+      color: #ffffff;
+      background-color: #000000;
       position: relative;
-      overflow: hidden; /* Prevent scrollbars */
-    }
-
-    .raindrop {
-      position: absolute;
-      top: -10px;
-      width: 2px;
-      height: 20px;
-      background: linear-gradient(to bottom, #0affef, transparent);
-      animation: fall 1s linear infinite;
-      opacity: 0.7;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
+      overflow: hidden;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,1) 100%);
     }
 
     .container {
       width: 90%;
       max-width: 900px;
       margin: 60px auto;
-      background: rgba(15, 15, 15, 0.9);
+      background: rgba(0, 0, 0, 0.9);
       padding: 25px;
       border-radius: 20px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
@@ -63,8 +42,8 @@
     .header {
       text-align: center;
       padding: 20px;
-      background: linear-gradient(45deg, #111, #222, #333);
-      color: #0affef;
+      background: linear-gradient(45deg, #2f4f7f, #000000, #2f4f7f);
+      color: #ffffff;
       border-radius: 15px 15px 0 0;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
       position: sticky;
@@ -74,52 +53,53 @@
     }
 
     @keyframes text-glow {
-      0% { text-shadow: 0 0 5px #0affef, 0 0 10px #0affef, 0 0 15px #0affef; }
-      100% { text-shadow: 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff; }
+      0% { text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff; }
+      100% { text-shadow: 0 0 20px #ffffff, 0 0 25px #ffffff, 0 0 30px #ffffff; }
     }
 
     .section {
       margin-bottom: 30px;
       padding: 20px;
       border-radius: 15px;
-      background-color: #1b1f24;
+      background: linear-gradient(135deg, rgba(50, 50, 150, 0.8), rgba(100, 100, 255, 0.8));
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       position: relative;
       z-index: 10;
+      opacity: 0;
       animation: fadeInSection 1.5s ease forwards;
       transform-origin: top;
     }
 
     @keyframes fadeInSection {
-      0% { opacity: 0; transform: scaleY(0); }
-      100% { opacity: 1; transform: scaleY(1); }
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .section:hover {
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
-      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+      transform: translateY(-5px) scale(1.02);
     }
 
     .section h2 {
-      color: #0affef;
+      color: #ffffff;
       position: relative;
       overflow: hidden;
+      transition: color 0.3s ease;
     }
 
-    .section h2::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #ff00ff;
-      animation: underline 2s linear infinite;
+    .section h2:hover {
+      color: #ff00ff;
     }
 
-    @keyframes underline {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+    .data-diri {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .data-diri:hover {
+      transform: scale(1.05);
+      color: #ff00ff;
     }
 
     .profile-picture {
@@ -129,41 +109,42 @@
       margin: 20px auto;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
       transition: transform 0.6s, box-shadow 0.6s;
-      animation: float 3s ease-in-out infinite alternate; /* Animasi float untuk gambar profil */
+      animation: float 3s ease-in-out infinite alternate;
     }
 
     @keyframes float {
-      0% { transform: translatey(0); }
-      100% { transform: translatey(-10px); }
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
     }
 
     .profile-picture:hover {
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); /* Efek bercahaya saat hover */
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+      transform: scale(1.1);
     }
 
     .button {
-      background: linear-gradient(90deg, #333, #555);
-      color: #0affef;
+      background: linear-gradient(90deg, #2f4f7f, #000000);
+      color: #ffffff;
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-size: 1em;
       transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex; /* Ubah menjadi flex */
-      align-items: center; /* Pusatkan logo dan teks secara vertikal */
+      display: flex;
+      align-items: center;
       margin: 20px auto;
       text-align: center;
     }
 
     .button:hover {
-      background: linear-gradient(90deg, #444, #666);
+      background: linear-gradient(90deg, #000000, #2f4f7f);
       transform: translateY(-5px) scale(1.1);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     }
 
     .social-media-links a {
-      color: #0affef;
+      color: #ffffff;
       text-decoration: none;
       font-size: 1.5em;
       transition: color 0.3s, transform 0.3s;
@@ -187,8 +168,8 @@
     .footer {
       text-align: center;
       padding: 20px;
-      background: rgba(15, 15, 15, 0.9);
-      color: #0affef;
+      background: rgba(0, 0, 0, 0.9);
+      color: #ffffff;
       border-radius: 0 0 15px 15px;
       box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.7);
       position: relative;
@@ -196,43 +177,52 @@
     }
 
     .whatsapp-icon {
-      margin-left: 10px; /* Jarak antara ikon dan teks */
-      width: 20px; /* Ukuran ikon */
-      height: 20px; /* Ukuran ikon */
+      margin-left: 10px;
+      width: 20px;
+      height: 20px;
     }
-    
-  /* CSS lainnya tetap sama */
 
-  audio {
-    width: 100%;
-    margin: 20px 0;
-    background: rgba(15, 15, 15, 0.8);
-    border: 2px solid #0affef;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    outline: none;
-    padding: 10px;
-  }
+    audio {
+      width: 100%;
+      margin: 20px 0;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      outline: none;
+      padding: 10px;
+    }
 
-  audio::-webkit-media-controls-panel {
-    background: rgba(15, 15, 15, 0.9);
-    border-radius: 10px;
-  }
+    audio::-webkit-media-controls-panel {
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 10px;
+    }
 
-  audio::-webkit-media-controls-play-button {
-    background: #0affef;
-    border-radius: 50%;
-  }
+    audio::-webkit-media-controls-play-button {
+      background: #ffffff;
+      border-radius: 50%;
+    }
 
-  audio::-webkit-media-controls-volume-slider {
-    background: #0affef;
-  }
+    audio::-webkit-media-controls-volume-slider {
+      background: #ffffff;
+    }
 
-  audio::-webkit-media-controls-mute-button {
-    background: #ff00ff;
-    border-radius: 50%;
-  }
-</style
+    audio::-webkit-media-controls-mute-button {
+      background: #ffffff;
+      border-radius: 50%;
+    }
+
+    /* Garis Horizontal */
+    .horizontal-line {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      margin: 20px 0;
+    }
+
+    /* Garis Dekoratif */
+    .decorative-line {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      margin: 10px 0;
+    }
   </style>
 </head>
 <body>
@@ -240,34 +230,32 @@
   <script>
 
   window.addEventListener('load', function() {
-    const audio = document.querySelector('audio');
+    const audio = document.querySelector(' audio');
     audio.play().catch(error => {
-      console.log('Autoplay diblokir oleh browser. Pengguna perlu mengklik play.');
+ console.log('Autoplay diblokir oleh browser. Pengguna perlu mengklik play.');
     });
   });
 
-    const maxRaindrops = 20; // Jumlah maksimum raindrop yang aktif
-    const raindrops = []; // Array untuk menyimpan raindrop yang sedang aktif
+    const maxRaindrops = 20;
+    const raindrops = [];
 
-    function createRaindrop() {
-      if (raindrops.length < maxRaindrops) { // Cek apakah jumlah raindrop sudah mencapai maksimum
+    function createRaindrop () {
+      if (raindrops.length < maxRaindrops) {
         const raindrop = document.createElement('div');
         raindrop.className = 'raindrop';
         raindrop.style.left = Math.random() * 100 + 'vw';
-        raindrop.style.animationDuration = Math.random() * 0.5 + 0.5 + 's'; // Kecepatan setiap raindrop
+        raindrop.style.animationDuration = Math.random() * 0.5 + 0.5 + 's';
         document.body.appendChild(raindrop);
-        raindrops.push(raindrop); // Tambahkan raindrop ke array
+        raindrops .push(raindrop);
 
-        // Hapus raindrop setelah animasi selesai
         raindrop.addEventListener('animationend', () => {
           raindrop.remove();
-          raindrops.splice(raindrops.indexOf(raindrop), 1); // Hapus dari array
+          raindrops.splice(raindrops.indexOf(raindrop), 1);
         });
       }
     }
 
-    setInterval(createRaindrop, 100); // Buat raindrop setiap 100ms
-
+    setInterval(createRaindrop, 100);
 
   </script>
 
@@ -276,35 +264,38 @@
       <h1>DISNAKERTRANS x SMKN 2 BUDURAN</h1>
     </div>
 
+    <div class="horizontal-line"></div>
+
     <div class="profile-picture">
       <img src="Gambar galang skena.jpg" alt="Profile" class="profile-picture">
     </div>
 
     <div class="section">
       <h2>Nama</h2>
-      <p>Galang Arrauf pramudito</p>
+      <p class="data-diri" style="animation: fadeIn 1.5s forwards;">Galang Arrauf pramudito</p>
+      <div class="decorative-line"></div>
     </div>
 
     <div class="section">
       <h2>Email</h2>
-      <p>galangskywalker@gmail.com</p>
+      <p class="data-diri" style="animation: fadeIn 1.5s forwards;">galangskywalker@gmail.com</p>
+      <div class="decorative-line"></div>
     </div>
 
-    <!-- Tambahkan bagian alamat di sini -->
     <div class="section">
       <h2>Alamat</h2>
-      <p>Perum bumi cabean asri G1/3, Sidoarjo, Jawa Timur, 61271</p>
+      <p class="data-diri">Perum bumi cabean asri G1/3, Sidoarjo, Jawa Timur, 61271</p>
     </div>
 
     <div class="social-media-links">
       <a href="https://instagram.com/galngg_" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i>
+        <i class="fab fa-instagram" style="animation: spin 2s ease-in-out infinite;"></i>
       </a>
       <a href="https://tiktok.com/@laaaangggggggg" target="_blank" title="TikTok">
-        <i class="fab fa-tiktok"></i>
+        <i class="fab fa-tiktok" style="animation: spin 2s ease-in-out infinite;"></i>
       </a>
     </div>
-    
+
     <div class="footer">
       <button class="button" onclick="window.open('https://wa.me/62895364773207', '_blank')">
         <span>Hubungi Saya</span>
@@ -316,7 +307,6 @@
       Your browser does not support the audio element.
     </audio>
 
-    
   </div>
 </body>
 </html>
