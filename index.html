@@ -176,13 +176,65 @@
             75% { clip: rect(74px, 9999px, 118px, 0); }
             100% { clip: rect(91px, 9999px, 12px, 0); }
         }
+                /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: block;
+            margin: auto;
+            animation: zoom-in 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+        }
+
+        @keyframes zoom-in {
+            from {transform: scale(0.5); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile" data-aos="fade-up">
-            <img src="galangg photo.jpg" alt="Profile Picture" class="profile-img">
+            <!-- Tambahkan id="profileImage" ke img -->
+            <img src="galangg photo.jpg" alt="Profile Picture" class="profile-img" id="profileImage">
             <h1 class="glitch-effect" data-text="Galangg Arrauf">Galangg Arrauf</h1>
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
             <p class="bio" data-aos="fade-up" data-aos-delay="200">anda butuh uang? ya saya juga.</p>
             <div class="info">
                 <div class="info-item" data-aos="fade-right" data-aos-delay="400">
@@ -221,6 +273,29 @@
             document.body.style.backgroundSize = '100% 100%';
             document.body.style.backgroundRepeat = 'no-repeat';
         });
+          // Modal Image Functionality
+          const profileImage = document.getElementById('profileImage');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        // Open modal when image is clicked
+        profileImage.onclick = function() {
+            modal.style.display = 'flex';
+            modalImage.src = this.src;
+        }
+
+        // Close modal when close button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html
