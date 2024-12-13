@@ -124,7 +124,7 @@
 
         .social-link:hover {
             transform: scale(1.2);
-            filter: drop-shadow(0 0 20px #8a2be2);
+            filter: drop-shadow(0 0 20px #c0e22b);
         }
 
         /* Social Media Icons */
@@ -223,6 +223,60 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .bio {
+
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px #6c5757;
+            text-transform: uppercase;
+            ;
+        }
+        /* Email Icon */
+.email {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/552/552486.png');
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .profile {
+        padding: 1rem;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .bio {
+        font-size: 16px;
+    }
+}
     </style>
 </head>
 <body>
@@ -235,7 +289,7 @@
                 <span class="close">&times;</span>
                 <img class="modal-content" id="modalImage">
             </div>
-            <p class="bio" data-aos="fade-up" data-aos-delay="200">anda butuh uang? ya saya juga.</p>
+            <p class="bio" data-aos="fade-up" data-aos-delay="200">exemplary student from Vocational high school </p>
             <div class="info">
                 <div class="info-item" data-aos="fade-right" data-aos-delay="400">
                     <p><span class="info-label">Age:</span> 18</p>
@@ -248,13 +302,75 @@
             </div>
             <div class="social-links">
                 <a href="https://www.instagram.com/galngg_" class="social-link instagram" data-aos="zoom-in" data-aos-delay="600"></a>
-                <a href="https://www.tiktok.com/@laaaangggggggg" class="social-link tiktok" data-aos="zoom-in" data-aos-delay="800"></a>
-                <a href="https://wa.me/62895364773207" class="social-link whatsapp" data-aos="zoom-in" data-aos-delay="1000"></a>
+                <a href="https://www.tiktok.com/@laaaangggggggg" class="social-link tiktok" data-aos="zoom-in" data-aos-delay="1200"></a>
+                <a href="https://wa.me/62895364773207" class="social-link whatsapp" data-aos="zoom-in" data-aos-delay="800"></a>
+                <!-- Tambahkan tombol email baru -->
+                <a href="#" class="social-link email" id="emailButton" data-aos="zoom-in" data-aos-delay="1000"></a>
+            </div>
+            
+            <!-- Tambahkan modal form email -->
+            <div id="emailModal" class="modal">
+                <div class="modal-content" style="background-color: #1a1a1a; padding: 30px; max-width: 500px; border-radius: 10px; position: relative;">
+                    <span class="close" style="position: absolute; top: 10px; right: 15px; font-size: 30px; cursor: pointer;">&times;</span>
+                    <form  id="emailForm" action="https://formspree.io/f/xanyzzyv" method="POST">
+                        <h2 style="color: #fff; text-align: center; margin-bottom: 25px;">Send Me an Email</h2>
+                        <div style="margin-bottom: 20px;">
+                            <label for="name" style="color: #c78cff; display: block; margin-bottom: 8px;">Name</label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name"
+                                placeholder="Enter your name" text="center"
+                                required 
+                                style="width: 100%; padding-top: 12px; padding-bottom:12px; background-color: #333; color: #fff; border: none; border-radius: 5px; transition: background-color 0.3s ease;"
+                                onmouseover="this.style.backgroundColor='#444'"
+                                onmouseout="this.style.backgroundColor='#333'"
+                                
+                            >
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label for="email" style="color: #c78cff; display: block; margin-bottom: 8px;">Email</label>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                id="email"
+                                placeholder="Enter your email" 
+                                required 
+                                style="width: 100%; padding-top: 12px; padding-bottom:12px; background-color: #333; color: #fff; border: none; border-radius: 5px; transition: background-color 0.3s ease;"
+                                onmouseover="this.style.backgroundColor='#444'"
+                                onmouseout="this.style.backgroundColor='#333'"
+                            >
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label for="message" style="color: #c78cff; display: block; margin-bottom: 8px;">Message</label>
+                            <textarea 
+                                name="message" 
+                                id="message"
+                                placeholder="Type your message here..." 
+                                required 
+                                style="width: 100%; padding-top: 12px; padding-bottom:12px; background-color: #333; color: #fff; border: none; border-radius: 5px; min-height: 120px; transition: background-color 0.3s ease;"
+                                onmouseover="this.style.backgroundColor='#444'"
+                                onmouseout="this.style.backgroundColor='#333'"
+                            ></textarea>
+                        </div>
+                        <div id="formStatus" style="margin-bottom: 15px; text-align: center; color: green; display: none;">
+                            Message sent successfully!
+                        </div>
+                        <button 
+                            type="submit" 
+                            style="width: 100%; padding: 12px; background-color: #8a2be2; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;"
+                            onmouseover="this.style.backgroundColor='#6a1b9a'"
+                            onmouseout="this.style.backgroundColor='#8a2be2'"
+                        >
+                            Send Message
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
     <script>
         AOS.init({
             duration: 1000,
@@ -296,6 +412,31 @@
                 modal.style.display = 'none';
             }
         }
+        // Email Modal Functionality
+const emailButton = document.getElementById('emailButton');
+const emailModal = document.getElementById('emailModal');
+const emailCloseBtn = emailModal.getElementsByClassName('close')[0];
+
+// Open email modal
+emailButton.onclick = function(e) {
+    e.preventDefault();
+    emailModal.style.display = 'flex';
+}
+
+// Close email modal when close button is clicked
+emailCloseBtn.onclick = function() {
+    emailModal.style.display = 'none';
+}
+
+// Close email modal when clicking outside
+window.onclick = function(event) {
+    if (event.target == emailModal) {
+        emailModal.style.display = 'none';
+    }
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
     </script>
 </body>
 </html
